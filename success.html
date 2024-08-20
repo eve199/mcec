@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Succès </title>
+    <title>Succès</title>
     <!-- Bootstrap CSS -->
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
   
@@ -18,7 +18,7 @@
             align-items: center;
             flex-direction: column;
             overflow: hidden;
-            background: linear-gradient(135deg, rgba(0, 0, 255, 0.5), rgba(0, 128, 0, 0.5)), url('background.jpg');
+            background: linear-gradient(135deg, rgba(255, 165, 0, 0.5), rgba(255, 255, 255, 0.5)), url('background.jpg');
             background-size: cover;
             animation: backgroundAnimation 15s ease infinite;
         }
@@ -30,8 +30,8 @@
         }
 
         .container {
-            background: rgba(255, 255, 255, 0.8);
-            border: 2px solid red;
+            background: rgba(255, 255, 255, 0.9);
+            border: 2px solid #FFA500; /* Orange */
             padding: 15px;
             border-radius: 10px;
             box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
@@ -43,25 +43,25 @@
 
         .success-icon {
             font-size: 40px;
-            color: green;
+            color: #FFA500; /* Orange */
             margin-bottom: 10px;
         }
 
         .title {
-            color: white;
+            color: #FFA500; /* Orange */
             font-size: 15px;
             font-weight: bold;
             margin-top: 10px;
         }
 
         .info {
-            color: red;
+            color: #333; /* Darker text color for contrast */
             font-size: 12px;
             margin: 8px 0;
         }
 
         span {
-            color: blue;
+            color: #FFA500; /* Orange */
         }
     </style>
 </head>
@@ -84,8 +84,6 @@
             const code = urlParams.get('code');
 
             const data = {
-               
-                
                 "AV01430/24/DGF-MCEC": {
                     accountNumber: "37000006645 58",
                     name: "TSOUMOU MBOU MERVEILLE",
@@ -94,7 +92,6 @@
                     studyCity: "Strasbourg, Lycée Louis Couffignal",
                     departureDate: "07 Septembre 2024"
                 },
-               
             };
 
             if (data[code]) {
@@ -111,4 +108,3 @@
     </script>
 </body>
 </html>
-
