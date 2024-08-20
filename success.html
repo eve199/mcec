@@ -31,7 +31,7 @@
 
         .container {
             background: rgba(255, 255, 255, 0.8);
-            border: 2px solid blue;
+            border: 2px solid red;
             padding: 15px;
             border-radius: 10px;
             box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
@@ -48,14 +48,14 @@
         }
 
         .title {
-            color: blue;
+            color: white;
             font-size: 15px;
             font-weight: bold;
             margin-top: 10px;
         }
 
         .info {
-            color: blue;
+            color: red;
             font-size: 12px;
             margin: 8px 0;
         }
@@ -84,22 +84,8 @@
             const code = urlParams.get('code');
 
             const data = {
-                "23/BZV/ECOBANK/24": {
-                    accountNumber: "37000008188",
-                    name: "MBOUALA KAMESSA Andréa",
-                    amount: "5.000.000 FCFA",
-                    passportNumber: "0A0652452",
-                    studyCity: "Metz, au Lycée Notre Dame de Peltre",
-                    departureDate: "05 Août 2024"
-                },
-                "78/BZV/ECOBANK/24": {
-                    accountNumber: "37000009570",
-                    name: "BAKALA MOUSSOUNDA BELVINA PRINCINELLE",
-                    amount: "5.000.000 FCFA",
-                    passportNumber: "OA0668372",
-                    studyCity: "Strasbourg",
-                    departureDate: "31 Août 2024"
-                },
+               
+                
                 "AV01430/24/DGF-MCEC": {
                     accountNumber: "37000006645 58",
                     name: "TSOUMOU MBOU MERVEILLE",
@@ -108,14 +94,7 @@
                     studyCity: "Strasbourg, Lycée Louis Couffignal",
                     departureDate: "07 Septembre 2024"
                 },
-                "234/BZV/ECOBANK/24": {
-                    accountNumber: "46354633880",
-                    name: "TIEN BI NABOE DORGELES",
-                    amount: "2.1000.000 FCFA",
-                    passportNumber: "21AF66934",
-                    studyCity: "GRENOBLE, Université de Grenoble Alpes",
-                    departureDate: "25 Août 2024"
-                },
+               
             };
 
             if (data[code]) {
