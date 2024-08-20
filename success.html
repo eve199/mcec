@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Succès </title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  
+    <!-- Custom CSS -->
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            height: 100vh;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            overflow: hidden;
+            background: linear-gradient(135deg, rgba(0, 0, 255, 0.5), rgba(0, 128, 0, 0.5)), url('background.jpg');
+            background-size: cover;
+            animation: backgroundAnimation 15s ease infinite;
+        }
+
+        @keyframes backgroundAnimation {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .container {
+            background: rgba(255, 255, 255, 0.8);
+            border: 2px solid blue;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            max-width: 400px;
+            width: 90%;
+            margin: 15px;
+            text-align: center;
+        }
+
+        .success-icon {
+            font-size: 40px;
+            color: green;
+            margin-bottom: 10px;
+        }
+
+        .title {
+            color: blue;
+            font-size: 15px;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+
+        .info {
+            color: blue;
+            font-size: 12px;
+            margin: 8px 0;
+        }
+
+        span {
+            color: blue;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="success-icon">&#10004;</div>
+        <h1 class="title">Document Vérifié avec Succès !</h1>
+        <p class="info">Le document entré est une Attestation de Virement Irrévocable Valide</p>
+        <p class="info">Numéro de compte: <span id="accountNumber"></span></p>
+        <p class="info">Nom: <span id="name"></span></p>
+        <p class="info">Montant bloqué: <span id="amount"></span></p>
+        <p class="info">Numéro de passeport: <span id="passportNumber"></span></p>
+        <p class="info">Ville d'étude en France: <span id="studyCity"></span></p>
+        <p class="info">Date de départ: <span id="departureDate"></span></p>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const urlParams = new URLSearchParams(window.location.search);
+            const code = urlParams.get('code');
+
+            const data = {
+                "23/BZV/ECOBANK/24": {
+                    accountNumber: "37000008188",
+                    name: "MBOUALA KAMESSA Andréa",
+                    amount: "5.000.000 FCFA",
+                    passportNumber: "0A0652452",
+                    studyCity: "Metz, au Lycée Notre Dame de Peltre",
+                    departureDate: "05 Août 2024"
+                },
+                "78/BZV/ECOBANK/24": {
+                    accountNumber: "37000009570",
+                    name: "BAKALA MOUSSOUNDA BELVINA PRINCINELLE",
+                    amount: "5.000.000 FCFA",
+                    passportNumber: "OA0668372",
+                    studyCity: "Strasbourg",
+                    departureDate: "31 Août 2024"
+                },
+                "AV01430/24/DGF-MCEC": {
+                    accountNumber: "37000006645 58",
+                    name: "TSOUMOU MBOU MERVEILLE",
+                    amount: "5.000.000 FCFA",
+                    passportNumber: "OA0714532",
+                    studyCity: "Strasbourg, Lycée Louis Couffignal",
+                    departureDate: "07 Septembre 2024"
+                },
+                "234/BZV/ECOBANK/24": {
+                    accountNumber: "46354633880",
+                    name: "TIEN BI NABOE DORGELES",
+                    amount: "2.1000.000 FCFA",
+                    passportNumber: "21AF66934",
+                    studyCity: "GRENOBLE, Université de Grenoble Alpes",
+                    departureDate: "25 Août 2024"
+                },
+            };
+
+            if (data[code]) {
+                document.getElementById('accountNumber').textContent = data[code].accountNumber;
+                document.getElementById('name').textContent = data[code].name;
+                document.getElementById('amount').textContent = data[code].amount;
+                document.getElementById('passportNumber').textContent = data[code].passportNumber;
+                document.getElementById('studyCity').textContent = data[code].studyCity;
+                document.getElementById('departureDate').textContent = data[code].departureDate;
+            } else {
+                window.location.href = 'error.html';
+            }
+        });
+    </script>
+</body>
+</html>
+
