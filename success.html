@@ -70,13 +70,14 @@
     <div class="container">
         <div class="success-icon">&#10004;</div>
         <h1 class="title">Document Vérifié avec Succès !</h1>
-        <p class="info">Le document entré est une Attestation de Virement Irrévocable Valide</p>
+        <p class="info">Ce compte de passage est ouvert dans nos livres</p>
+
         <p class="info">Numéro de compte: <span id="accountNumber"></span></p>
         <p class="info">Nom: <span id="name"></span></p>
         <p class="info">Montant bloqué: <span id="amount"></span></p>
-        <p class="info">Numéro de passeport: <span id="passportNumber"></span></p>
-        <p class="info">Ville d'étude en France: <span id="studyCity"></span></p>
-        <p class="info">Date de départ: <span id="departureDate"></span></p>
+        <p class="info">Nombre de versements: <span id="numbercheck"></span></p>
+        <p class="info">Montant du 1er versement: <span id="sum1st"></span></p>
+        <p class="info">Date du 1er versement: <span id="date1st"></span></p>
     </div>
 
     <script>
@@ -88,10 +89,18 @@
                 "AV01430/24/DGF-MCEC": {
                     accountNumber: "37000006645 58",
                     name: "TSOUMOU MBOU MERVEILLE",
-                    amount: "5.000.000 FCFA",
-                    passportNumber: "OA0714532",
-                    studyCity: "Strasbourg, Lycée Louis Couffignal",
-                    departureDate: "07 Septembre 2024"
+                    amount: "7692 euros",
+                    numbercheck: "12",
+                    sum1st: " 641 euros",
+                    date1st: "30 Octobre 2024"
+                },
+                "AV1287/24/DGF-MCEC": {
+                    accountNumber: "3630058841 55",
+                    name: "MAMPOUYA-BOUDZIKA ELSY-ROZENN",
+                    amount: "7622 euros",
+                    numbercheck: "10",
+                    sum1st: " 762 euros",
+                    date1st: "30 Octobre 2024"
                 },
             };
 
@@ -99,9 +108,9 @@
                 document.getElementById('accountNumber').textContent = data[code].accountNumber;
                 document.getElementById('name').textContent = data[code].name;
                 document.getElementById('amount').textContent = data[code].amount;
-                document.getElementById('passportNumber').textContent = data[code].passportNumber;
-                document.getElementById('studyCity').textContent = data[code].studyCity;
-                document.getElementById('departureDate').textContent = data[code].departureDate;
+                document.getElementById('numbercheck').textContent = data[code].numbercheck;
+                document.getElementById('sum1st').textContent = data[code].sum1st;
+                document.getElementById('date1st').textContent = data[code].date1st;
             } else {
                 window.location.href = 'error.html';
             }
