@@ -7,7 +7,7 @@
     <!-- Bootstrap CSS -->
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <link rel="icon" href="logo.ico" type="image/x-icon">
-  
+
     <!-- Custom CSS -->
     <style>
         body {
@@ -19,7 +19,8 @@
             align-items: center;
             flex-direction: column;
             overflow: hidden;
-            background: linear-gradient(135deg, rgba(255, 165, 0, 0.5), rgba(255, 255, 255, 0.5)), url('background.jpg');
+            background: linear-gradient(135deg, rgba(255, 165, 0, 0.5), rgba(255, 255, 255, 0.5)), 
+                        url('background.jpg');
             background-size: cover;
             animation: backgroundAnimation 15s ease infinite;
         }
@@ -56,7 +57,7 @@
         }
 
         .info {
-            color: #333; /* Darker text color for contrast */
+            color: #333;
             font-size: 12px;
             margin: 8px 0;
         }
@@ -91,7 +92,7 @@
                     name: "TSOUMOU MBOU MERVEILLE",
                     amount: "XAF 4.550.000",
                     numbercheck: "10",
-                    sum1st: " 700 euros",
+                    sum1st: "700 euros",
                     date1st: "30 Octobre 2024"
                 },
                 "AV1287/24/DGF-MCEC": {
@@ -99,7 +100,7 @@
                     name: "MAMPOUYA-BOUDZIKA ELSY-ROZENN",
                     amount: "7622 euros",
                     numbercheck: "10",
-                    sum1st: " 762 euros",
+                    sum1st: "762 euros",
                     date1st: "30 Octobre 2024"
                 },
                 "AVI-356/10/2024/DGF/MCEC": {
@@ -107,28 +108,31 @@
                     name: "MALONGA MABANDZA Ave Blest Mariel",
                     amount: "8000 euros",
                     numbercheck: "10",
-                    sum1st: " 800 euros",
+                    sum1st: "800 euros",
                     date1st: "30 Novembre 2024"
                 },
                 "AVI-1986/10/2024/DGF/MCEC": {
-                    accountNumber: " 37000007050 15",
+                    accountNumber: "37000007050 15",
                     name: "MIKOLO Japhet Euphorie De Debat",
                     amount: "7400 euros",
                     numbercheck: "10",
-                    sum1st: " 740 euros",
+                    sum1st: "740 euros",
                     date1st: "30 Novembre 2024"
-                };
+                }
+            };
 
-            if (data[code]) {
-                document.getElementById('accountNumber').textContent = data[code].accountNumber;
-                document.getElementById('name').textContent = data[code].name;
-                document.getElementById('amount').textContent = data[code].amount;
-                document.getElementById('numbercheck').textContent = data[code].numbercheck;
-                document.getElementById('sum1st').textContent = data[code].sum1st;
-                document.getElementById('date1st').textContent = data[code].date1st;
-            } else {
+            if (!code || !data[code]) {
                 window.location.href = 'error.html';
+                return;
             }
+
+            const account = data[code];
+            document.getElementById('accountNumber').textContent = account.accountNumber;
+            document.getElementById('name').textContent = account.name;
+            document.getElementById('amount').textContent = account.amount;
+            document.getElementById('numbercheck').textContent = account.numbercheck;
+            document.getElementById('sum1st').textContent = account.sum1st;
+            document.getElementById('date1st').textContent = account.date1st;
         });
     </script>
 </body>
